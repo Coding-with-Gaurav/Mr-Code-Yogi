@@ -10,6 +10,7 @@ const ContactForm = () => {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -19,37 +20,39 @@ const ContactForm = () => {
     }));
   };
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
 
-const handleSubmit = (e: React.FormEvent) => {
-  e.preventDefault();
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formData,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
 
-  emailjs
-    .send(
-      'service_ij7013n',
-      'template_8084kwd',
-      formData,
-      '4EJaRCqUMdVaBQpJ2'
-    )
-    .then((result) => {
       setSubmitted(true);
       setTimeout(() => {
         setFormData({ name: '', email: '', subject: '', message: '' });
         setSubmitted(false);
-      }, 3000);
-    })
-    .catch((error) => {
-      alert('Failed to send message. Please try again.');
-      console.error(error);
-    });
-};
+      }, 4000);
+    } catch (error) {
+      alert('Failed to send message. Please try again or email me directly.');
+      console.error('EmailJS error:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="bg-slate-800 border border-slate-700 rounded-xl p-8 max-w-2xl mx-auto">
       <h3 className="text-2xl font-bold text-white mb-6">Get In Touch</h3>
 
       {submitted ? (
-        <div className="bg-green-900/20 border border-green-500/50 text-green-300 p-4 rounded-lg text-center">
-          Thank you for your message! I'll get back to you soon.
+        <div className="bg-green-900/20 border border-green-500/50 text-green-300 p-6 rounded-lg text-center animate-pulse">
+          <p className="text-lg font-medium">Message sent successfully!</p>
+          <p className="text-sm mt-2">I'll reply within 24 hours.</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -96,10 +99,17 @@ const handleSubmit = (e: React.FormEvent) => {
 
           <button
             type="submit"
-            className="w-full bg-amber-400 text-slate-900 px-6 py-3 rounded-lg font-semibold hover:bg-amber-300 transition-colors flex items-center justify-center gap-2"
+            disabled={loading}
+            className="w-full bg-amber-400 text-slate-900 px-6 py-3 rounded-lg font-semibold hover:bg-amber-300 transition-all disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
-            <Send className="w-5 h-5" />
-            Send Message
+            {loading ? (
+              <>Sending...</>
+            ) : (
+              <>
+                <Send className="w-5 h-5" />
+                Send Message
+              </>
+            )}
           </button>
         </form>
       )}

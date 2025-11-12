@@ -2,7 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
-import { ThemeProvider } from './components/ThemeProvider';
+
 import '@fontsource/inter/400.css';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/600.css';
@@ -18,11 +18,13 @@ import '@fontsource/geist-sans/500.css';
 import '@fontsource/geist-sans/600.css';
 import '@fontsource/geist-sans/800.css';
 import '@fontsource/geist-sans/900.css';
+import { Analytics } from '@vercel/analytics/react'
+import { Toaster } from 'react-hot-toast'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeProvider>
       <App />
-    </ThemeProvider>
+      <Toaster position="top-right" />
+      <Analytics />
   </StrictMode>
 );
