@@ -6,7 +6,7 @@
     "images": [
       "/images/MBCC/IMG_20250604_084559.jpg",
       "/images/MBCC/41544779579.png",
-      "/images/MBCC/Photo from Gaurav Sony(1).jpg"
+      "/images/MBCC/gaurav1.jpg"
     ],
     "link": "https://iksmha.iitmandi.ac.in/mbcc/2025"
   },
@@ -15,9 +15,9 @@
     "role": "Research Paper Presenter",
     "description": "Participated in the international conference Faith & Future: Integrating AI with Spirituality at Dev Sanskriti Vishwavidyalaya (DSVV), Haridwar (16-17 Sept 2025). The event focussed on aligning AI development with spiritual, cultural and ethical values. :contentReference[oaicite:6]{index=6} I presented the paper “The Spiritual Well-being Index (SWBI): An AI Framework for Measuring and Enhancing Spiritual Growth”. Additionally, I participated in the 24-hour hackathon organised by the Institute of Artificial Intelligence, Dev Sanskriti Vishwavidyalaya (IAI DSVV) contributing backend development for a web-based learning platform and won the hackathon.",
     "images": [
-      "/images/Fait & Future/WhatsApp Image 2025-09-18 at 12.22.30 PM (2).jpeg",
-      "/images/Fait & Future/WhatsApp Image 2025-09-18 at 12.22.30 PM (12).jpeg",
-      "/images/Fait & Future/WhatsApp Image 2025-09-18 at 12.22.30 PM (14).jpeg"
+      "/images/Faith-and-Future/image1.jpeg",
+      "/images/Faith-and-Future/image2.jpeg",
+      "/images/Faith-and-Future/image3.jpeg"
     ],
     "link": "https://dsvv.awgp.org/en/news?id=6591"
   },
@@ -43,15 +43,15 @@
   },
 
   {
-    "title": "Social Internship – Youth & Spirituality Outreach, Surat",
+    "title": "Social_Internship – Youth & Spirituality Outreach, Surat",
     "role": "Guest Lecturer & Intern",
-    "description": "Completed a one-month social internship in Surat at the ‘City of India’ initiative, delivering lectures across various departments — Biotechnology, M.Com, Hindu Studies, IAS Training, Management, Technology (Computer Science/Data Science), BSc Physics/Chemistry, Mathematics — as well as conducting yoga sessions at Vas­talya Dham (an orphanage). Topics covered included personality development, youth challenges with solutions via spirituality, pillars of spirituality, stress management, benefit of the Gayatri mantra, and practical guidance for today’s students.",
+    "description": "Completed a one-month Social_Internship in Surat at the ‘City of India’ initiative, delivering lectures across various departments — Biotechnology, M.Com, Hindu Studies, IAS Training, Management, Technology (Computer Science/Data Science), BSc Physics/Chemistry, Mathematics — as well as conducting yoga sessions at Vas­talya Dham (an orphanage). Topics covered included personality development, youth challenges with solutions via spirituality, pillars of spirituality, stress management, benefit of the Gayatri mantra, and practical guidance for today’s students.",
     "images": [
-      "/images/Social Internship/IMG_20241221_182848825.jpg",
-      "/images/Social Internship/IMG-20241221-WA0020.jpg",
-      "/images/Social Internship/IMG-20241221-WA0019.jpg",
-      "/images/Social Internship/IMG-20241205-WA0029.jpg",
-      "/images/Social Internship/20241230_14536pmByGPSMapCamera.jpg"
+      "/images/Social_Internship/IMG_20241221_182848825.jpg",
+      "/images/Social_Internship/IMG-20241221-WA0020.jpg",
+      "/images/Social_Internship/IMG-20241221-WA0019.jpg",
+      "/images/Social_Internship/IMG-20241205-WA0029.jpg",
+      "/images/Social_Internship/20241230_14536pmByGPSMapCamera.jpg"
     ],
     "link": ""
   }
