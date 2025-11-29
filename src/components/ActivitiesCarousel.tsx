@@ -539,7 +539,7 @@ function ActivityCard({ activity }: { activity: Activity }) {
                 effect="blur"
                 className="w-full h-full object-contain object-center"
                 wrapperProps={{
-                  style: { width: '100%', height:true, height: '100%' }
+                  style: { width: '100%', height: '100%' }
                 }}
                 style={{ display: 'block' }}
                 placeholderSrc="/placeholder.jpg" // optional: add a low-res placeholder
