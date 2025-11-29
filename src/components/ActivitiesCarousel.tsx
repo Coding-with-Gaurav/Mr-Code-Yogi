@@ -348,7 +348,8 @@ export default function ActivitiesCarousel() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('public/data/activities.json')
+    // fetch('public/data/activities.json')
+    fetch(`${import.meta.env.BASE_URL}data/activities.json`)
       .then(res => res.ok ? res.json() : Promise.reject())
       .then(data => {
         setActivities(data);
