@@ -1,183 +1,13 @@
-
-// // export default Hero;
-// import { Mail, Github, Linkedin, Download } from "lucide-react";
-// import { useEffect, useState } from "react";
-
-// // Import images properly (recommended for Vite/React)
-// import Img1 from "/src/assets/Gaurav Kumar.jpeg";
-// import Img2 from "/src/assets/Gk.jpeg";
-// import Img3 from "/src/assets/gks.jpeg";
-
-// const images = [Img1, Img2, Img3]; // Use imported images
-
-// const Hero = () => {
-//   const [currentIndex, setCurrentIndex] = useState(0);
-
-//   // Auto-slide every 3 seconds
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setCurrentIndex((prev) => (prev + 1) % images.length);
-//     }, 3000);
-//     return () => clearInterval(interval);
-//   }, []);
-
-//   return (
-//     <div className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white overflow-hidden">
-//       {/* Background Lights */}
-//       <div className="absolute inset-0 opacity-10">
-//         <div className="absolute top-0 left-0 w-96 h-96 bg-amber-400 rounded-full blur-3xl"></div>
-//         <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-400 rounded-full blur-3xl"></div>
-//       </div>
-
-//       {/* Main Container */}
-//       <div className="relative max-w-6xl mx-auto px-6 py-20">
-//         <div className="grid md:grid-cols-2 gap-12 items-center">
-//           {/* LEFT SIDE */}
-//           <div className="space-y-8">
-//             <div>
-//               <p className="text-amber-400 text-sm font-semibold tracking-widest mb-2">
-//                 AI RESEARCHER & FULL-STACK DEVELOPER
-//               </p>
-//               <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-//                 Gaurav
-//                 <span className="block text-amber-400">Kumar</span>
-//               </h1>
-//             </div>
-
-//             <p className="text-lg text-slate-300 leading-relaxed max-w-xl">
-//               Junior Research Fellow at the Center for Artificial Intelligence &
-//               Research. Specializing in LLM-based applications, NLP, and
-//               knowledge graph generation with proven expertise in healthcare AI
-//               and cultural technology solutions.
-//             </p>
-
-//             <div className="flex flex-wrap gap-3">
-//               <a
-//                 href="#contact"
-//                 className="inline-flex items-center gap-2 bg-amber-400 text-slate-900 px-6 py-3 rounded-lg font-semibold hover:bg-amber-300 transition-colors scroll-smooth"
-//               >
-//                 <Mail className="w-5 h-5" />
-//                 Contact Me
-//               </a>
-//               <a
-//                 href="https://drive.google.com/uc?export=download&id=1BN0zKGiuN2-FL7qnMwlRTdU30oCO5FKX"
-//                 className="inline-flex items-center gap-2 border-2 border-amber-400 text-amber-400 px-6 py-3 rounded-lg font-semibold hover:bg-amber-400 hover:text-slate-900 transition-colors"
-//               >
-//                 <Download className="w-5 h-5" />
-//                 Resume
-//               </a>
-//             </div>
-
-//             <div className="flex gap-4 pt-4">
-//               <a
-//                 href="mailto:gauravkumarsony08@gmail.com"
-//                 className="flex items-center gap-2 text-slate-300 hover:text-amber-400 transition-colors group"
-//               >
-//                 <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
-//                 <span className="text-sm">gauravkumarsony08@gmail.com</span>
-//               </a>
-//             </div>
-
-//             <div className="flex gap-4 pt-4">
-//               <a
-//                 href="https://github.com/Coding-with-Gaurav" // Update with your GitHub
-//                 target="_blank"
-//                 rel="noopener noreferrer"
-//                 className="text-slate-400 hover:text-amber-400 transition-colors transform hover:scale-110"
-//                 aria-label="GitHub"
-//               >
-//                 <Github className="w-6 h-6" />
-//               </a>
-//               <a
-//                 href="https://www.linkedin.com/in/gaurav-kumar-68453b247/" // Update with your LinkedIn
-//                 target="_blank"
-//                 rel="noopener noreferrer"
-//                 className="text-slate-400 hover:text-amber-400 transition-colors transform hover:scale-110"
-//                 aria-label="LinkedIn"
-//               >
-//                 <Linkedin className="w-6 h-6" />
-//               </a>
-//             </div>
-//           </div>
-
-//           {/* RIGHT SIDE - Image Carousel */}
-//           <div className="relative flex flex-col items-center">
-//             <div className="w-full aspect-square bg-gradient-to-br from-amber-400/20 to-blue-400/20 rounded-2xl p-8 border border-amber-400/30">
-//               <div className="w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl flex flex-col items-center justify-center border border-slate-700 text-center space-y-6">
-
-//                 {/* Image Carousel */}
-//                 <div className="w-40 h-40 md:w-64 md:h-64 rounded-full overflow-hidden ring-4 ring-amber-400 shadow-2xl">
-//                   <div
-//                     className="flex transition-transform duration-1000 ease-in-out h-full"
-//                     style={{
-//                       transform: `translateX(-${currentIndex * 100}%)`,
-//                     }}
-//                   >
-//                     {images.map((src, index) => (
-//                       <div
-//                         key={index}
-//                         className="w-full h-full flex-shrink-0"
-//                       >
-//                         <img
-//                           src={src}
-//                           alt={`Gaurav Kumar - Image ${index + 1}`}
-//                           className="w-full h-full object-cover rounded-full"
-//                         />
-//                       </div>
-//                     ))}
-//                   </div>
-//                 </div>
-
-//                 {/* Title & Affiliation */}
-//                 <div className="space-y-1">
-//                   <p className="text-2xl font-bold text-amber-400">
-//                     Junior Research Fellow
-//                   </p>
-//                   <p className="text-slate-200 text-sm font-medium">
-//                     Center for Artificial Intelligence & Research (IAI)
-//                   </p>
-//                   <p className="text-slate-400 text-sm">
-//                     Dev Sanskriti Vishwavidyalaya, Haridwar
-//                   </p>
-//                 </div>
-//               </div>
-//             </div>
-
-//             {/* Optional: Carousel Dots */}
-//             <div className="flex justify-center gap-2 mt-6">
-//               {images.map((_, index) => (
-//                 <button
-//                   key={index}
-//                   onClick={() => setCurrentIndex(index)}
-//                   className={`transition-all duration-300 rounded-full ${index === currentIndex
-//                     ? "bg-amber-400 w-8 h-2"
-//                     : "bg-slate-600 w-2 h-2"
-//                     }`}
-//                   aria-label={`Go to slide ${index + 1}`}
-//                 />
-//               ))}
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Hero;
-
-
-
 import { Mail, Download } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion"; // Add: npm install framer-motion
 
 // Import images
 import Img1 from "/src/assets/Gaurav Kumar.jpeg";
-import Img2 from "/src/assets/Gk.jpeg";
+// import Img2 from "/src/assets/Gk.jpeg";
 import Img3 from "/src/assets/gks.jpeg";
 
-const images = [Img1, Img2, Img3];
+const images = [Img1, Img3];
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -226,14 +56,14 @@ const Hero = () => {
             className="space-y-8"
           >
             <div>
-              <motion.p
+              {/* <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
                 className="text-amber-400 text-sm md:text-base font-semibold tracking-widest uppercase mb-3"
               >
                 AI Researcher • Full-Stack Engineer
-              </motion.p>
+              </motion.p> */}
 
               <motion.h1
                 initial={{ opacity: 0, y: 10 }}
@@ -254,10 +84,15 @@ const Hero = () => {
             >
               Junior Research Fellow at the{" "}
               <span className="text-amber-300 font-medium">
-                Center for Artificial Intelligence & Research (IAI)
+                Center for Artificial Intelligence & Research (IAI–CAIR)
               </span>
-              . Building LLM-powered systems for healthcare, cultural preservation, and semantic knowledge.
+              , working on AI, ML, and NLP research for Indian Knowledge Systems (IKS). I
+              build LLM-powered and data-driven solutions for healthcare, Ayurveda,
+              cultural preservation, and historical knowledge modeling - creating
+              practical, real-world AI applications that connect traditional wisdom with
+              modern intelligent systems.
             </motion.p>
+
 
             {/* CTA Buttons */}
             <motion.div
@@ -291,11 +126,11 @@ const Hero = () => {
               className="flex items-center gap-6 pt-6"
             >
               <a
-                href="mailto:gauravkumarsony08@gmail.com"
+                href="mailto:tech_gaurav@outlook.com"
                 className="flex items-center gap-2 text-slate-400 hover:text-amber-400 transition-colors group"
               >
                 <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="text-sm">gauravkumarsony08@gmail.com</span>
+                <span className="text-sm">tech_gaurav@outlook.com</span>
               </a>
             </motion.div>
 
@@ -363,7 +198,7 @@ const Hero = () => {
                       Junior Research Fellow
                     </p>
                     <p className="text-sm md:text-base text-slate-300 font-medium">
-                      Center for AI & Research (IAI)
+                      Institute of Artificial Intelligence (IAI)
                     </p>
                     <p className="text-xs md:text-sm text-slate-500">
                       Dev Sanskriti Vishwavidyalaya, Haridwar
@@ -378,11 +213,10 @@ const Hero = () => {
                   <button
                     key={i}
                     onClick={() => setCurrentIndex(i)}
-                    className={`transition-all duration-300 rounded-full ${
-                      i === currentIndex
+                    className={`transition-all duration-300 rounded-full ${i === currentIndex
                         ? "bg-amber-400 w-10 h-2.5"
                         : "bg-slate-600 w-2.5 h-2.5 hover:bg-slate-500"
-                    }`}
+                      }`}
                     aria-label={`Slide ${i + 1}`}
                   />
                 ))}

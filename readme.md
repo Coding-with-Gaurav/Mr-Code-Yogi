@@ -34,3 +34,14 @@ Building AI for **Healthcare** & **Cultural Preservation**
 gaurav@example.com • [LinkedIn](https://linkedin.com/in/gaurav-kumar-68453b247) • [GitHub](https://github.com/Coding-with-Gaurav)
 
 ---
+
+  // {
+  //   "title": "Participated in Hackathon — Institute of Artificial Intelligence, DSVV",
+  //   "role": "Face Recognition based Mass Attendance System",
+  //   "description": "Participated in the Hackathon organized by the Institute of Artificial Intelligence, Dev Sanskriti Vishwavidyalaya (DSVV), Haridwar. Worked with a team to develop a Facial Recognition Based Mass Attendance System aimed at improving efficiency in academic environments. My primary responsibility was conducting in-depth research on existing attendance systems, analyzing various approaches adopted by previous researchers, and identifying the most suitable techniques to guide the system’s design and development.",
+  //   "images": [
+  //     "/images/activities/hackathon-dsvv-1.jpg",
+  //     "/images/activities/hackathon-dsvv-2.jpg"
+  //   ],
+  //   "link": "https://dsvv.ac.in/institute-of-artificial-intelligence/"
+  // },

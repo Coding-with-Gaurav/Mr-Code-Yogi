@@ -1,637 +1,3 @@
-// import { Award, Briefcase, GraduationCap, Code, FileText, BookOpen, Sparkles } from 'lucide-react';
-// import Navigation from './components/Navigation';
-// import Hero from './components/Hero';
-// import ProjectsGrid from './components/ProjectsGrid';
-// import SkillBadges from './components/SkillBadges';
-// import Timeline from './components/Timeline';
-// import ContactForm from './components/ContactForm';
-
-// function App() {
-//   const projects = [
-//     {
-//       title: "HistoAI",
-//       description: "Historical Data Extraction from PDFs",
-//       longDescription: "Advanced LLM-based system for extracting structured information from complex historical documents with optical character recognition and natural language processing.",
-//       technologies: ["Python", "LLMs", "NLP", "PDF Processing", "LangChain"],
-//       link: "#",
-//       github: "#"
-//     },
-//     {
-//       title: "Ayur Scan",
-//       description: "Tongue Analysis & Diagnosis App",
-//       longDescription: "Mobile application leveraging AI computer vision for Ayurvedic tongue diagnosis, providing personalized health insights based on traditional medicine principles.",
-//       technologies: ["Flutter", "TensorFlow", "Computer Vision", "Firebase", "React"],
-//       link: "#",
-//       github: "#"
-//     },
-//     {
-//       title: "Sanskrit OCR",
-//       description: "OCR for Ancient Manuscripts",
-//       longDescription: "Specialized optical character recognition system designed for accurate digitization of ancient Sanskrit manuscripts and cultural texts with deep learning.",
-//       technologies: ["Python", "OpenCV", "Deep Learning", "Tesseract", "PyTorch"],
-//       link: "#",
-//       github: "#"
-//     },
-//     {
-//       title: "RAG Chatbot",
-//       description: "Retrieval-Augmented Generation System",
-//       longDescription: "Intelligent chatbot leveraging retrieval-augmented generation with LLMs for context-aware conversations and knowledge base integration.",
-//       technologies: ["LangChain", "GPT", "Vector DB", "Flask", "React"],
-//       link: "#",
-//       github: "#"
-//     },
-//     {
-//       title: "Knowledge Graph Generator",
-//       description: "Semantic Knowledge Graph Construction",
-//       longDescription: "Automated system for generating knowledge graphs from unstructured text using LLMs, enabling semantic understanding and relationship extraction.",
-//       technologies: ["Python", "LLMs", "Neo4j", "NLP", "Graph DB"],
-//       link: "#",
-//       github: "#"
-//     },
-//     {
-//       title: "Medical AI Research",
-//       description: "Healthcare AI Applications",
-//       longDescription: "Research and development of AI applications for healthcare including diagnosis assistance, patient data analysis, and predictive modeling.",
-//       technologies: ["TensorFlow", "PyTorch", "Healthcare Data", "ML", "Research"],
-//       link: "#",
-//       github: "#"
-//     }
-//   ];
-
-//   const skills = {
-//     "Programming Languages": ["Python", "C", "JavaScript", "Java", "Dart", "SQL"],
-//     "Web & Mobile Development": ["React", "Flask", "HTML", "CSS", "Bootstrap", "Flutter"],
-//     "ML & NLP": ["TensorFlow", "PyTorch", "Keras", "scikit-learn", "LangChain", "spaCy", "NLTK"],
-//     "Data Visualization": ["Matplotlib", "Seaborn", "Plotly", "Tableau"],
-//     "Cloud & Tools": ["Google Cloud", "Firebase", "Git", "Jupyter", "Docker", "APIs"],
-//     "Databases": ["MySQL", "MongoDB", "Neo4j", "Vector DB", "Supabase"]
-//   };
-
-//   const experiences = [
-//     {
-//       title: "Junior Research Fellow",
-//       organization: "Center for Artificial Intelligence & Research (IAI)",
-//       duration: "Jun 2025 - Present",
-//       current: true,
-//       responsibilities: [
-//         "Lead development of HistoAI for structured data extraction from historical documents using LLMs",
-//         "Architect and implement RAG-integrated chatbot systems with advanced NLP capabilities",
-//         "Design and develop knowledge graph generation pipelines for semantic data representation",
-//         "Conduct cutting-edge research in AI applications for healthcare and cultural technology"
-//       ]
-//     },
-//     {
-//       title: "Research Intern",
-//       organization: "Center for Artificial Intelligence & Research (IAI)",
-//       duration: "2023 - 2025",
-//       current: false,
-//       responsibilities: [
-//         "Conducted extensive research on mobile-based tongue diagnosis using computer vision and AI",
-//         "Developed NLP applications for healthcare data analysis and medical text processing",
-//         "Published accepted research paper on AI-driven tongue diagnosis systems",
-//         "Contributed to multiple AI research initiatives and project implementations"
-//       ]
-//     },
-//     {
-//       title: "Software Development Volunteer",
-//       organization: "Various Organizations",
-//       duration: "2022 - 2023",
-//       current: false,
-//       responsibilities: [
-//         "Supported open-source software development initiatives and collaborative projects",
-//         "Contributed to web and mobile application projects and architecture",
-//         "Collaborated with distributed teams on technical solutions and problem-solving"
-//       ]
-//     }
-//   ];
-
-//   const certifications = [
-//     { name: "Data Science Specialization", issuer: "Coursera" },
-//     { name: "Generative AI Fundamentals", issuer: "Google Cloud" },
-//     { name: "Big Data Analytics", issuer: "Udemy" },
-//     { name: "Machine Learning with Python", issuer: "Coursera" },
-//     { name: "Natural Language Processing", issuer: "DeepLearning.AI" }
-//   ];
-
-//   const education = [
-//     {
-//       degree: "Master of Computer Applications (MCA)",
-//       institution: "Dev Sanskriti Vishwavidyalaya, Uttarakhand",
-//       duration: "2023 - 2025",
-//       focus: "Specialization: Data Science, AI & NLP"
-//     },
-//     {
-//       degree: "Bachelor of Science in Information Technology",
-//       institution: "Patliputra University, Patna",
-//       duration: "2019 - 2022",
-//       focus: "Foundation in computer science and software development"
-//     }
-//   ];
-
-//   return (
-//     <div className="min-h-screen bg-slate-900 text-slate-300">
-//       <Navigation />
-//       <Hero />
-
-//       <main className="max-w-6xl mx-auto px-6 py-20 space-y-28">
-//         <section id="education" className="space-y-8">
-//           <div className="flex items-center gap-3">
-//             <GraduationCap className="w-8 h-8 text-amber-400" />
-//             <h2 className="text-3xl font-bold text-white">Education</h2>
-//           </div>
-//           <div className="grid md:grid-cols-2 gap-6">
-//             {education.map((edu, index) => (
-//               <div
-//                 key={index}
-//                 className="bg-slate-800 border border-slate-700 rounded-xl p-6 hover:border-amber-400/50 transition-colors"
-//               >
-//                 <h3 className="text-xl font-semibold text-white">{edu.degree}</h3>
-//                 <p className="text-amber-400 mt-2">{edu.institution}</p>
-//                 <p className="text-slate-400 text-sm mt-1">{edu.duration}</p>
-//                 <p className="text-slate-300 text-sm mt-3">{edu.focus}</p>
-//               </div>
-//             ))}
-//           </div>
-//         </section>
-
-//         <section id="projects" className="space-y-8">
-//           <div className="flex items-center gap-3">
-//             <Code className="w-8 h-8 text-amber-400" />
-//             <h2 className="text-3xl font-bold text-white">Featured Projects</h2>
-//           </div>
-//           <ProjectsGrid projects={projects} />
-//         </section>
-
-//         <section id="publications" className="space-y-8">
-//           <div className="flex items-center gap-3">
-//             <BookOpen className="w-8 h-8 text-amber-400" />
-//             <h2 className="text-3xl font-bold text-white">Publications</h2>
-//           </div>
-//           <div className="bg-slate-800 border border-amber-400/30 rounded-xl p-8 hover:border-amber-400/70 transition-colors">
-//             <div className="space-y-4">
-//               <h3 className="text-xl font-semibold text-white">
-//                 AI-Driven Tongue Diagnosis System for Healthcare
-//               </h3>
-//               <p className="text-slate-300 leading-relaxed">
-//                 Research paper accepted for publication exploring the application of artificial intelligence
-//                 and computer vision in traditional Ayurvedic tongue diagnosis. This work demonstrates the
-//                 potential of AI in bridging ancient medical systems with modern technology.
-//               </p>
-//               <div className="flex gap-4 pt-4">
-//                 <span className="inline-block px-4 py-2 bg-amber-400/10 text-amber-300 rounded-lg text-sm font-medium border border-amber-400/20">
-//                   Status: Accepted
-//                 </span>
-//                 <a href="#" className="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 transition-colors">
-//                   <FileText className="w-4 h-4" />
-//                   Download PDF
-//                 </a>
-//               </div>
-//             </div>
-//           </div>
-//         </section>
-
-//         <section id="experience" className="space-y-8">
-//           <div className="flex items-center gap-3">
-//             <Briefcase className="w-8 h-8 text-amber-400" />
-//             <h2 className="text-3xl font-bold text-white">Work Experience</h2>
-//           </div>
-//           <Timeline items={experiences} />
-//         </section>
-
-//         <section id="skills" className="space-y-8">
-//           <div className="flex items-center gap-3">
-//             <Sparkles className="w-8 h-8 text-amber-400" />
-//             <h2 className="text-3xl font-bold text-white">Skills & Technologies</h2>
-//           </div>
-//           <div className="grid md:grid-cols-2 gap-8">
-//             {Object.entries(skills).map(([category, items]) => (
-//               <SkillBadges key={category} category={category} skills={items} />
-//             ))}
-//           </div>
-//         </section>
-
-//         <section className="space-y-8">
-//           <div className="flex items-center gap-3">
-//             <Award className="w-8 h-8 text-amber-400" />
-//             <h2 className="text-3xl font-bold text-white">Certifications & Achievements</h2>
-//           </div>
-//           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-//             {certifications.map((cert, index) => (
-//               <div
-//                 key={index}
-//                 className="bg-slate-800 border border-slate-700 rounded-lg p-4 hover:border-amber-400/50 transition-colors flex items-start gap-3"
-//               >
-//                 <Award className="w-5 h-5 text-amber-400 flex-shrink-0 mt-1" />
-//                 <div>
-//                   <p className="text-white font-medium">{cert.name}</p>
-//                   <p className="text-slate-400 text-sm">{cert.issuer}</p>
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-//         </section>
-
-//         <section id="contact" className="py-12">
-//           <div className="space-y-8">
-//             <div className="flex items-center gap-3">
-//               <FileText className="w-8 h-8 text-amber-400" />
-//               <h2 className="text-3xl font-bold text-white">Let's Connect</h2>
-//             </div>
-//             <ContactForm />
-//           </div>
-//         </section>
-//       </main>
-
-//       <footer className="bg-slate-800 border-t border-slate-700 text-slate-400 py-12 mt-28">
-//         <div className="max-w-6xl mx-auto px-6 text-center">
-//           <p className="text-sm">
-//             © 2024 Gaurav Kumar. Building the future with AI, NLP, and full-stack development.
-//           </p>
-//           <p className="text-xs mt-2">
-//             AI Research • NLP • Full-Stack Development • Healthcare AI • Cultural Technology
-//           </p>
-//         </div>
-//       </footer>
-//     </div>
-//   );
-// }
-
-// export default App;
-
-
-
-
-// import { Award, Briefcase, GraduationCap, Code, FileText, BookOpen, Sparkles, Mail, Github, Linkedin } from 'lucide-react';
-// import { motion } from 'framer-motion';
-// import { useState } from 'react';
-// import toast, { Toaster } from 'react-hot-toast';
-// import Navigation from './components/Navigation';
-// import Hero from './components/Hero';
-// import ProjectsGrid from './components/ProjectsGrid';
-// import SkillBadges from './components/SkillBadges';
-// import Timeline from './components/Timeline';
-// import ContactForm from './components/ContactForm';
-
-// function App() {
-//   const [selectedProject, setSelectedProject] = useState<any>(null);
-
-//   const projects = [
-//     {
-//       title: "HistoAI",
-//       description: "Historical Data Extraction from PDFs",
-//       longDescription: "Advanced LLM-based system for extracting structured information from complex historical documents with optical character recognition and natural language processing.",
-//       technologies: ["Python", "LLMs", "NLP", "PDF Processing", "LangChain"],
-//       link: "https://github.com/Coding-with-Gaurav/HistoAI",
-//       github: "https://github.com/Coding-with-Gaurav/HistoAI"
-//     },
-//     {
-//       title: "Ayur Scan",
-//       description: "Tongue Analysis & Diagnosis App",
-//       longDescription: "Mobile application leveraging AI computer vision for Ayurvedic tongue diagnosis, providing personalized health insights based on traditional medicine principles.",
-//       technologies: ["Flutter", "TensorFlow", "Computer Vision", "Firebase", "React"],
-//       link: "https://github.com/Coding-with-Gaurav/AyurScan",
-//       github: "https://github.com/Coding-with-Gaurav/AyurScan"
-//     },
-//     {
-//       title: "Sanskrit OCR",
-//       description: "OCR for Ancient Manuscripts",
-//       longDescription: "Specialized optical character recognition system designed for accurate digitization of ancient Sanskrit manuscripts and cultural texts with deep learning.",
-//       technologies: ["Python", "OpenCV", "Deep Learning", "Tesseract", "PyTorch"],
-//       link: "https://github.com/Coding-with-Gaurav/SanskritOCR",
-//       github: "https://github.com/Coding-with-Gaurav/SanskritOCR"
-//     },
-//     {
-//       title: "RAG Chatbot",
-//       description: "Retrieval-Augmented Generation System",
-//       longDescription: "Intelligent chatbot leveraging retrieval-augmented generation with LLMs for context-aware conversations and knowledge base integration.",
-//       technologies: ["LangChain", "GPT", "Vector DB", "Flask", "React"],
-//       link: "https://github.com/Coding-with-Gaurav/RAG-Chatbot",
-//       github: "https://github.com/Coding-with-Gaurav/RAG-Chatbot"
-//     },
-//     {
-//       title: "Knowledge Graph Generator",
-//       description: "Semantic Knowledge Graph Construction",
-//       longDescription: "Automated system for generating knowledge graphs from unstructured text using LLMs, enabling semantic understanding and relationship extraction.",
-//       technologies: ["Python", "LLMs", "Neo4j", "NLP", "Graph DB"],
-//       link: "https://github.com/Coding-with-Gaurav/KG-Generator",
-//       github: "https://github.com/Coding-with-Gaurav/KG-Generator"
-//     },
-//     {
-//       title: "Medical AI Research",
-//       description: "Healthcare AI Applications",
-//       longDescription: "Research and development of AI applications for healthcare including diagnosis assistance, patient data analysis, and predictive modeling.",
-//       technologies: ["TensorFlow", "PyTorch", "Healthcare Data", "ML", "Research"],
-//       link: "#",
-//       github: "#"
-//     }
-//   ];
-
-//   const skills = {
-//     "Programming Languages": ["Python", "C", "JavaScript", "Java", "Dart", "SQL"],
-//     "Web & Mobile Development": ["React", "Flask", "HTML", "CSS", "Bootstrap", "Flutter"],
-//     "ML & NLP": ["TensorFlow", "PyTorch", "Keras", "scikit-learn", "LangChain", "spaCy", "NLTK"],
-//     "Data Visualization": ["Matplotlib", "Seaborn", "Plotly", "Tableau"],
-//     "Cloud & Tools": ["Google Cloud", "Firebase", "Git", "Jupyter", "Docker", "APIs"],
-//     "Databases": ["MySQL", "MongoDB", "Neo4j", "Vector DB", "Supabase"]
-//   };
-
-//   const experiences = [
-//     {
-//       title: "Junior Research Fellow",
-//       organization: "Center for Artificial Intelligence & Research (IAI)",
-//       duration: "Jun 2025 - Present",
-//       current: true,
-//       responsibilities: [
-//         "Lead development of HistoAI for structured data extraction from historical documents using LLMs",
-//         "Architect and implement RAG-integrated chatbot systems with advanced NLP capabilities",
-//         "Design and develop knowledge graph generation pipelines for semantic data representation",
-//         "Conduct cutting-edge research in AI applications for healthcare and cultural technology"
-//       ]
-//     },
-//     {
-//       title: "Research Intern",
-//       organization: "Center for Artificial Intelligence & Research (IAI)",
-//       duration: "2023 - 2025",
-//       current: false,
-//       responsibilities: [
-//         "Conducted extensive research on mobile-based tongue diagnosis using computer vision and AI",
-//         "Developed NLP applications for healthcare data analysis and medical text processing",
-//         "Published accepted research paper on AI-driven tongue diagnosis systems",
-//         "Contributed to multiple AI research initiatives and project implementations"
-//       ]
-//     },
-//     {
-//       title: "Software Development Volunteer",
-//       organization: "Various Organizations",
-//       duration: "2022 - 2023",
-//       current: false,
-//       responsibilities: [
-//         "Supported open-source software development initiatives and collaborative projects",
-//         "Contributed to web and mobile application projects and architecture",
-//         "Collaborated with distributed teams on technical solutions and problem-solving"
-//       ]
-//     }
-//   ];
-
-//   const certifications = [
-//     { name: "Data Science Specialization", issuer: "Coursera" },
-//     { name: "Generative AI Fundamentals", issuer: "Google Cloud" },
-//     { name: "Big Data Analytics", issuer: "Udemy" },
-//     { name: "Machine Learning with Python", issuer: "Coursera" },
-//     { name: "Natural Language Processing", issuer: "DeepLearning.AI" }
-//   ];
-
-//   const education = [
-//     {
-//       degree: "Master of Computer Applications (MCA)",
-//       institution: "Dev Sanskriti Vishwavidyalaya, Uttarakhand",
-//       duration: "2023 - 2025",
-//       focus: "Specialization: Data Science, AI & NLP"
-//     },
-//     {
-//       degree: "Bachelor of Science in Information Technology",
-//       institution: "Patliputra University, Patna",
-//       duration: "2019 - 2022",
-//       focus: "Foundation in computer science and software development"
-//     }
-//   ];
-
-//   return (
-//     <>
-//       <Toaster position="top-right" />
-//       <div className="min-h-screen bg-slate-950 text-slate-300">
-//         <Navigation />
-//         <Hero />
-
-//         <main className="max-w-7xl mx-auto px-6 py-24 space-y-32">
-//           {/* Education */}
-//           <motion.section
-//             initial={{ opacity: 0, y: 20 }}
-//             whileInView={{ opacity: 1, y: 0 }}
-//             viewport={{ once: true }}
-//             id="education"
-//             className="space-y-8"
-//           >
-//             <div className="flex items-center gap-3">
-//               <GraduationCap className="w-8 h-8 text-amber-400" />
-//               <h2 className="text-3xl md:text-4xl font-bold text-white">Education</h2>
-//             </div>
-//             <div className="grid md:grid-cols-2 gap-6">
-//               {education.map((edu, i) => (
-//                 <motion.div
-//                   key={i}
-//                   whileHover={{ y: -4 }}
-//                   className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-amber-400/30 transition-all"
-//                 >
-//                   <h3 className="text-xl font-bold text-white">{edu.degree}</h3>
-//                   <p className="text-amber-400 mt-1">{edu.institution}</p>
-//                   <p className="text-slate-400 text-sm">{edu.duration}</p>
-//                   <p className="text-slate-300 text-sm mt-3">{edu.focus}</p>
-//                 </motion.div>
-//               ))}
-//             </div>
-//           </motion.section>
-
-//           {/* Projects */}
-//           <motion.section
-//             initial={{ opacity: 0, y: 20 }}
-//             whileInView={{ opacity: 1, y: 0 }}
-//             viewport={{ once: true }}
-//             id="projects"
-//             className="space-y-8"
-//           >
-//             <div className="flex items-center gap-3">
-//               <Code className="w-8 h-8 text-amber-400" />
-//               <h2 className="text-3xl md:text-4xl font-bold text-white">Featured Projects</h2>
-//             </div>
-//             <ProjectsGrid projects={projects} onSelect={setSelectedProject} />
-//           </motion.section>
-
-//           {/* Project Modal */}
-//           {selectedProject && (
-//             <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4" onClick={() => setSelectedProject(null)}>
-//               <motion.div
-//                 initial={{ scale: 0.9, opacity: 0 }}
-//                 animate={{ scale: 1, opacity: 1 }}
-//                 className="bg-slate-900 border border-slate-700 rounded-2xl p-8 max-w-2xl w-full"
-//                 onClick={(e) => e.stopPropagation()}
-//               >
-//                 <h3 className="text-2xl font-bold text-white">{selectedProject.title}</h3>
-//                 <p className="text-slate-300 mt-3">{selectedProject.longDescription}</p>
-//                 <div className="flex flex-wrap gap-2 mt-4">
-//                   {selectedProject.technologies.map((tech: string) => (
-//                     <span key={tech} className="px-3 py-1 bg-amber-400/10 text-amber-300 rounded-full text-xs font-medium">
-//                       {tech}
-//                     </span>
-//                   ))}
-//                 </div>
-//                 <div className="flex gap-4 mt-6">
-//                   {selectedProject.link !== "#" && (
-//                     <a href={selectedProject.link} target="_blank" className="text-amber-400 hover:text-amber-300 flex items-center gap-2">
-//                       <Github className="w-5 h-5" /> Live Demo
-//                     </a>
-//                   )}
-//                   {selectedProject.github !== "#" && (
-//                     <a href={selectedProject.github} target="_blank" className="text-amber-400 hover:text-amber-300 flex items-center gap-2">
-//                       <Github className="w-5 h-5" /> Source Code
-//                     </a>
-//                   )}
-//                 </div>
-//                 <button
-//                   onClick={() => setSelectedProject(null)}
-//                   className="mt-6 text-slate-400 hover:text-white"
-//                 >
-//                   Close
-//                 </button>
-//               </motion.div>
-//             </div>
-//           )}
-
-//           {/* Publications */}
-//           <motion.section
-//             initial={{ opacity: 0, y: 20 }}
-//             whileInView={{ opacity: 1, y: 0 }}
-//             viewport={{ once: true }}
-//             id="publications"
-//             className="space-y-8"
-//           >
-//             <div className="flex items-center gap-3">
-//               <BookOpen className="w-8 h-8 text-amber-400" />
-//               <h2 className="text-3xl md:text-4xl font-bold text-white">Publications</h2>
-//             </div>
-//             <motion.div
-//               whileHover={{ scale: 1.01 }}
-//               className="bg-gradient-to-br from-slate-800 to-slate-900 border border-amber-400/20 rounded-2xl p-8 hover:border-amber-400/50 transition-all"
-//             >
-//               <h3 className="text-xl font-bold text-white">AI-Driven Tongue Diagnosis System for Healthcare</h3>
-//               <p className="text-slate-300 mt-3 leading-relaxed">
-//                 Research paper accepted for publication exploring the application of artificial intelligence
-//                 and computer vision in traditional Ayurvedic tongue diagnosis.
-//               </p>
-//               <div className="flex gap-4 mt-6">
-//                 <span className="px-4 py-2 bg-amber-400/10 text-amber-300 rounded-lg text-sm font-medium border border-amber-400/20">
-//                   Status: Accepted
-//                 </span>
-//                 <a href="/path-to-paper.pdf" className="flex items-center gap-2 text-amber-400 hover:text-amber-300">
-//                   <FileText className="w-4 h-4" /> Download PDF
-//                 </a>
-//               </div>
-//             </motion.div>
-//           </motion.section>
-
-//           {/* Experience */}
-//           <motion.section
-//             initial={{ opacity: 0, y: 20 }}
-//             whileInView={{ opacity: 1, y: 0 }}
-//             viewport={{ once: true }}
-//             id="experience"
-//             className="space-y-8"
-//           >
-//             <div className="flex items-center gap-3">
-//               <Briefcase className="w-8 h-8 text-amber-400" />
-//               <h2 className="text-3xl md:text-4xl font-bold text-white">Work Experience</h2>
-//             </div>
-//             <Timeline items={experiences} />
-//           </motion.section>
-
-//           {/* Skills */}
-//           <motion.section
-//             initial={{ opacity: 0, y: 20 }}
-//             whileInView={{ opacity: 1, y: 0 }}
-//             viewport={{ once: true }}
-//             id="skills"
-//             className="space-y-8"
-//           >
-//             <div className="flex items-center gap-3">
-//               <Sparkles className="w-8 h-8 text-amber-400" />
-//               <h2 className="text-3xl md:text-4xl font-bold text-white">Skills & Technologies</h2>
-//             </div>
-//             <div className="grid md:grid-cols-2 gap-8">
-//               {Object.entries(skills).map(([category, items], i) => (
-//                 <motion.div
-//                   key={category}
-//                   initial={{ opacity: 0, x: -20 }}
-//                   whileInView={{ opacity: 1, x: 0 }}
-//                   transition={{ delay: i * 0.1 }}
-//                 >
-//                   <SkillBadges category={category} skills={items} />
-//                 </motion.div>
-//               ))}
-//             </div>
-//           </motion.section>
-
-//           {/* Certifications */}
-//           <motion.section
-//             initial={{ opacity: 0, y: 20 }}
-//             whileInView={{ opacity: 1, y: 0 }}
-//             viewport={{ once: true }}
-//             className="space-y-8"
-//           >
-//             <div className="flex items-center gap-3">
-//               <Award className="w-8 h-8 text-amber-400" />
-//               <h2 className="text-3xl md:text-4xl font-bold text-white">Certifications</h2>
-//             </div>
-//             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-//               {certifications.map((cert, i) => (
-//                 <motion.div
-//                   key={i}
-//                   whileHover={{ scale: 1.05 }}
-//                   className="bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 rounded-xl p-5 hover:border-amber-400/50 transition-all flex items-start gap-3"
-//                 >
-//                   <Award className="w-6 h-6 text-amber-400 flex-shrink-0 mt-1" />
-//                   <div>
-//                     <p className="text-white font-semibold">{cert.name}</p>
-//                     <p className="text-slate-400 text-sm">{cert.issuer}</p>
-//                   </div>
-//                 </motion.div>
-//               ))}
-//             </div>
-//           </motion.section>
-
-//           {/* Contact */}
-//           <motion.section
-//             initial={{ opacity: 0, y: 20 }}
-//             whileInView={{ opacity: 1, y: 0 }}
-//             viewport={{ once: true }}
-//             id="contact"
-//             className="py-16"
-//           >
-//             <div className="flex items-center gap-3 mb-8">
-//               <Mail className="w-8 h-8 text-amber-400" />
-//               <h2 className="text-3xl md:text-4xl font-bold text-white">Let's Connect</h2>
-//             </div>
-//             <ContactForm onSuccess={() => toast.success("Message sent!")} />
-//           </motion.section>
-//         </main>
-
-//         {/* Footer */}
-//         <footer className="bg-slate-900 border-t border-slate-800 py-12 mt-32">
-//           <div className="max-w-7xl mx-auto px-6 text-center">
-//             <motion.p
-//               initial={{ opacity: 0 }}
-//               whileInView={{ opacity: 1 }}
-//               className="text-sm text-slate-400"
-//             >
-//               © 2025 Gaurav Kumar. Crafting AI for healthcare and culture.
-//             </motion.p>
-//             <div className="flex justify-center gap-6 mt-4">
-//               <a href="https://github.com/Coding-with-Gaurav" target="_blank" className="text-slate-500 hover:text-amber-400 transition">
-//                 <Github className="w-5 h-5" />
-//               </a>
-//               <a href="https://linkedin.com/in/gaurav-kumar-68453b247" target="_blank" className="text-slate-500 hover:text-amber-400 transition">
-//                 <Linkedin className="w-5 h-5" />
-//               </a>
-//             </div>
-//           </div>
-//         </footer>
-//       </div>
-//     </>
-//   );
-// }
-
-// export default App;
-
-
 'use client';
 
 import { Award, Briefcase, GraduationCap, Code, FileText, BookOpen, Sparkles, Mail, Github, Linkedin, X, } from 'lucide-react';
@@ -644,6 +10,8 @@ import ProjectsGrid from './components/ProjectsGrid';
 import SkillBadges from './components/SkillBadges';
 import Timeline from './components/Timeline';
 import ContactForm from './components/ContactForm';
+import CertificateModal from './components/CertificateModal';
+import ActivitiesCarousel from './components/ActivitiesCarousel';
 
 // PREMIUM FONTS — 100% WORKING
 import '@fontsource-variable/inter';
@@ -662,6 +30,11 @@ import '@fontsource/geist-sans/900.css';
 function App() {
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [activeSection, setActiveSection] = useState('hero');
+  const [selectedCert, setSelectedCert] = useState<{
+    name: string;
+    issuer: string;
+    link: string;
+  } | null>(null);
 
   const projects = [
     { title: "HistoAI", description: "Historical Data Extraction from PDFs", longDescription: "Advanced LLM-based system for extracting structured information from complex historical documents with OCR and NLP.", technologies: ["Python", "LLMs", "NLP", "PDF Processing", "LangChain"], link: "https://github.com/Coding-with-Gaurav/HistoAI", github: "https://github.com/Coding-with-Gaurav/HistoAI" },
@@ -674,27 +47,79 @@ function App() {
 
   const skills = {
     "Programming Languages": ["Python", "C", "JavaScript", "Java", "Dart", "SQL"],
-    "Web & Mobile Development": ["React", "Flask", "HTML", "CSS", "Bootstrap", "Flutter"],
-    "ML & NLP": ["TensorFlow", "PyTorch", "Keras", "scikit-learn", "LangChain", "spaCy", "NLTK"],
+    "Web & Mobile Development": ["React", "Flask", "Typescript", "CSS", "tailwind", "Flutter"],
+    "ML & NLP": ["TensorFlow", "PyTorch", "Keras", "scikit-learn", "LangChain", "spaCy", "NLTK", "LLM"],
     "Data Visualization": ["Matplotlib", "Seaborn", "Plotly", "Tableau"],
     "Cloud & Tools": ["Google Cloud", "Firebase", "Git", "Jupyter", "Docker", "APIs"],
-    "Databases": ["MySQL", "MongoDB", "Neo4j", "Vector DB", "Supabase"]
+    "Databases": ["MySQL", "MongoDB", "Neo4j", "Vector DB",]
   };
 
   const experiences = [
     { title: "Junior Research Fellow", organization: "Center for Artificial Intelligence & Research (IAI)", duration: "Jun 2025 - Present", current: true, responsibilities: ["Lead development of HistoAI for structured data extraction from historical documents using LLMs", "Architect and implement RAG-integrated chatbot systems", "Design knowledge graph generation pipelines", "Conduct cutting-edge AI research in healthcare and culture"] },
     { title: "Research Intern", organization: "Center for Artificial Intelligence & Research (IAI)", duration: "2023 - 2025", current: false, responsibilities: ["Conducted mobile-based tongue diagnosis research using computer vision", "Developed NLP applications for healthcare", "Published accepted research paper", "Contributed to multiple AI initiatives"] },
-    { title: "Software Development Volunteer", organization: "Various Organizations", duration: "2022 - 2023", current: false, responsibilities: ["Supported open-source initiatives", "Contributed to web/mobile projects", "Collaborated in distributed teams"] }
+    { title: "Software Development Volunteer", organization: "IT Cell Shantikunj", duration: "2022 - 2023", current: false, responsibilities: ["Supported open-source initiatives", "Contributed to web/mobile projects", "Collaborated in distributed teams"] }
   ];
 
   const certifications = [
-    { name: "Data Science Specialization", issuer: "Coursera" },
-    { name: "Generative AI Fundamentals", issuer: "Google Cloud" },
-    { name: "Big Data Analytics", issuer: "Udemy" },
-    { name: "Machine Learning with Python", issuer: "Coursera" },
-    { name: "Natural Language Processing", issuer: "DeepLearning.AI" }
+    {
+      name: "Introduction to Data Science",
+      issuer: "Coursera",
+      link: "https://drive.google.com/file/d/15DS95ahxgUn0rRu5n-qNlkgcltUz4caL/view",
+    },
+    {
+      name: "Crash Course on Git, GitHub, and Markdown",
+      issuer: "Udemy",
+      link: "https://www.udemy.com/certificate/UC-44767e90-4f57-41e8-b188-08f61f081478/",
+    },
+    {
+      name: "Introduction to Generative AI",
+      issuer: "Google Cloud Skills Boost",
+      link: "https://www.cloudskillsboost.google/public_profiles/78692f20-7bd0-43fa-bde2-fc39539cb3c6/badges/8136058?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share",
+    },
+    {
+      name: "Big Data Certification",
+      issuer: "Udemy",
+      link: "https://www.udemy.com/certificate/UC-8ccc765f-6dbf-4bf9-bedc-d2f066eaa4de/",
+    },
+    {
+      name: "Data Analytics with Tableau",
+      issuer: "Jobaaj Learnings",
+      link: "https://www.jobaajlearnings.com/certificate?file=certificate-96811-37-0.jpeg",
+    },
   ];
-
+  const extraActivities = [
+    {
+      title: "AI for Social Good Hackathon",
+      role: "Lead Organizer & Winner",
+      description:
+        "Organized a 48-hour hackathon focused on AI solutions for healthcare and education. Led a team of 12 developers to build HistoAI prototype. Won 1st prize and presented to 200+ attendees. The event featured workshops on LLMs, computer vision, and ethical AI.",
+      images: [
+        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1552664730-d307ca8841cb?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1522202176988-66273c2b2d23?w=800&h=600&fit=crop",
+      ],
+      link: "https://devpost.com/software/histoai",
+    },
+    {
+      title: "National Sanskrit AI Conference",
+      role: "Speaker & Participant",
+      description:
+        "Presented research on Sanskrit OCR and NLP at Dev Sanskriti Vishwavidyalaya. Conducted live demo of digitizing ancient manuscripts using deep learning. Networked with linguists, AI researchers, and cultural preservation experts.",
+      images: [
+        "https://images.unsplash.com/photo-1505373877841-8d25f8d46678?w=800&h=600&fit=crop",
+        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=600&fit=crop",
+      ],
+    },
+    {
+      title: "Google Cloud Gen AI Workshop",
+      role: "Participant & Project Lead",
+      description:
+        "Attended 3-day intensive workshop on Generative AI. Built a RAG-based Sanskrit chatbot as final project. Received Google Cloud certification and mentorship from Google engineers.",
+      images: [
+        "https://images.unsplash.com/photo-1516321310766-93d6d79a1c83?w=800&h=600&fit=crop",
+      ],
+    },
+  ];
   const education = [
     { degree: "Master of Computer Applications (MCA)", institution: "Dev Sanskriti Vishwavidyalaya, Uttarakhand", duration: "2023 - 2025", focus: "Specialization: Data Science, AI & NLP" },
     { degree: "Bachelor of Science in Information Technology", institution: "Patliputra University, Patna", duration: "2019 - 2022", focus: "Foundation in computer science and software development" }
@@ -703,7 +128,7 @@ function App() {
   // Scroll spy
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'education', 'projects', 'publications', 'experience', 'skills', 'contact'];
+      const sections = ['hero', 'education', 'projects', 'publications', 'experience', 'skills', 'certifications', 'activities', 'contact'];
       const scrollPos = window.scrollY + 100;
       for (const section of sections) {
         const el = document.getElementById(section);
@@ -803,19 +228,51 @@ function App() {
                 Publications
               </h2>
             </div>
-            <motion.div whileHover={{ y: -4 }} className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-md border border-amber-400/30 rounded-2xl p-8 hover:border-amber-400/60 transition-all">
-              <h3 className="text-2xl font-display font-bold text-white">AI-Driven Tongue Diagnosis System for Healthcare</h3>
-              <p className="text-slate-300 mt-4 leading-relaxed">
-                Research paper accepted for publication exploring AI and computer vision in traditional Ayurvedic tongue diagnosis.
-              </p>
-              <div className="flex gap-4 mt-6">
-                <span className="px-4 py-2 bg-amber-400/20 text-amber-300 rounded-lg text-sm font-medium border border-amber-400/40">
-                  Accepted
-                </span>
-                <a href="#" className="flex items-center gap-2 text-amber-400 hover:text-amber-300 text-sm">
-                  <FileText className="w-4 h-4" /> Download PDF
-                </a>
+            <motion.div
+              whileHover={{ y: -6, scale: 1.01 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="relative bg-gradient-to-br from-slate-800/60 via-slate-900/70 to-black/40 backdrop-blur-xl border border-amber-500/20 rounded-2xl p-8 overflow-hidden hover:border-amber-400/60 hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-500"
+            >
+              {/* Subtle glowing accent line at top */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-400 via-orange-500 to-amber-600 opacity-70" />
+
+              <div className="relative z-10">
+                {/* Standout Title with Gradient + Glow */}
+                <h3 className="text-2xl md:text-3xl font-display font-bold bg-gradient-to-r from-amber-200 via-amber-100 to-yellow-100 bg-clip-text text-transparent leading-tight">
+                  AI Tongue Diagnosis:{' '}
+                  <span className="text-xl md:text-2xl text-amber-300/90">
+                    Expert System with LLMs for Abdominal Disease Detection Through Mobile Application
+                  </span>
+                </h3>
+
+                {/* Presented At Badge */}
+                <div className="flex items-center gap-2 mt-4 text-amber-300 text-sm font-medium">
+                  <span className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
+                  Presented at <span className="text-amber-200 font-bold">MBCC 2025</span>, IIT Mandi
+                </div>
+
+                {/* Description */}
+                <p className="text-slate-300 mt-5 leading-relaxed text-base">
+                  Research paper accepted for publication exploring the fusion of computer vision, large language models, and traditional Ayurvedic tongue diagnosis through a mobile application.
+                </p>
+
+                {/* Status Tags */}
+                <div className="flex flex-wrap gap-4 mt-7">
+                  {/* Accepted Badge */}
+                  <div className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-amber-400/20 to-orange-500/20 border border-amber-400/50 rounded-full text-amber-200 text-sm font-semibold backdrop-blur-sm">
+                    <div className="w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
+                    Accepted for Publication
+                  </div>
+
+                  {/* Coming Soon Badge */}
+                  <div className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600/20 to-pink-600/20 border border-purple-400/40 rounded-full text-purple-300 text-sm font-medium italic">
+                    <span className="animate-pulse">Public Link Coming Soon</span>
+                  </div>
+                </div>
               </div>
+
+              {/* Optional subtle corner glow */}
+              <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl" />
             </motion.div>
           </motion.section>
 
@@ -846,16 +303,27 @@ function App() {
           </motion.section>
 
           {/* Certifications */}
-          <motion.section initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+          <motion.section
+            id="certifications"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
             <div className="flex items-center gap-3 mb-10">
               <Award className="w-8 h-8 text-amber-400" />
               <h2 className="text-4xl md:text-5xl font-display font-bold bg-gradient-to-r from-amber-300 to-amber-500 bg-clip-text text-transparent">
                 Certifications
               </h2>
             </div>
+
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {certifications.map((cert, i) => (
-                <motion.div key={i} whileHover={{ scale: 1.05 }} className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-5 hover:border-amber-400/40 transition-all flex items-start gap-3">
+                <motion.div
+                  key={i}
+                  whileHover={{ scale: 1.05 }}
+                  className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-5 hover:border-amber-400/40 transition-all flex items-start gap-3 cursor-pointer"
+                  onClick={() => setSelectedCert(cert)}   // <-- open modal
+                >
                   <Award className="w-6 h-6 text-amber-400 mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-white font-medium">{cert.name}</p>
@@ -864,6 +332,28 @@ function App() {
                 </motion.div>
               ))}
             </div>
+          </motion.section>
+
+          {/* Modal – placed just after the section (or anywhere inside <main>) */}
+          <AnimatePresence>
+            {selectedCert && (
+              <CertificateModal cert={selectedCert} onClose={() => setSelectedCert(null)} />
+            )}
+          </AnimatePresence>
+
+          <motion.section
+            id="activities"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex items-center gap-3 mb-8">
+              <Sparkles className="w-8 h-8 text-amber-400" />
+              <h2 className="text-4xl md:text-5xl font-display font-bold bg-gradient-to-r from-amber-300 to-amber-500 bg-clip-text text-transparent">
+                Extra Activities
+              </h2>
+            </div>
+            <ActivitiesCarousel />
           </motion.section>
 
           {/* Contact */}
